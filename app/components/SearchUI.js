@@ -16,8 +16,9 @@ class SearchUI extends React.Component{
                 <AppBar
                     title="Med search frontend"
                 >
-                    <SearchInput/>
+                   
                 </AppBar>
+                <SearchInput/>
                 <LoadingModal/>
                 <SearchResultsTable/>
                 
