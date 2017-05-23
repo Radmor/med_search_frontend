@@ -1,0 +1,2 @@
+export const SEARCH_GET = 'SEARCH_GET';
+export const SEARCH_RECEIVE = 'SEARCH_RECEIVE';
