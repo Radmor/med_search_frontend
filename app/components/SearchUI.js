@@ -2,10 +2,11 @@ import React from 'react'
 
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
-
+import Divider from 'material-ui/Divider';
 
 import LoadingModal from './LoadingModal';
-
+import SearchResultsTable from './SearchResultsTable';
+import SearchInput from './SearchInput';
 
 class SearchUI extends React.Component{
 
@@ -14,8 +15,11 @@ class SearchUI extends React.Component{
             <Paper>
                 <AppBar
                     title="Med search frontend"
-                />
+                >
+                    <SearchInput/>
+                </AppBar>
                 <LoadingModal/>
+                <SearchResultsTable/>
                 
             </Paper>
         )
