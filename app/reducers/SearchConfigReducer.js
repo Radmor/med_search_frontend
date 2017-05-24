@@ -1,8 +1,13 @@
 import {SEARCHCONFIG_GET, SEARCHCONFIG_RECEIVE } from '../constants/SearchConfigConstants';
 
+const initialFilteringMethods = ['metoda1', 'metoda2']
+const initialComparisonMethods = ['metoda1', 'metoda2']
+
 const initialState = {
-    filteringMethods: ['metoda1', 'metoda2'],
-    comparisonMethods: ['metoda1', 'metoda2']
+    filteringMethods: initialFilteringMethods,
+    comparisonMethods: initialComparisonMethods,
+    filteringMethodsSelectValue: initialFilteringMethods[0],
+    comparisonMethodsSelectValue: initialComparisonMethods[0]
 }
 
 export function searchConfig(state = initialState, action){
@@ -21,6 +26,7 @@ export function searchConfig(state = initialState, action){
             };
             
         }
+
 
         default:{
             return state

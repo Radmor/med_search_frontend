@@ -39,11 +39,13 @@ class SearchInput extends React.Component{
                     <ToolbarTitle text="Options" />
                     <SelectField
                         floatingLabelText="Filtering Method"
+                        value = { this.props.filteringMethodsSelectValue }
                     >
                         {filteringMethodsSelectItems}
                     </SelectField>
                     <SelectField
                         floatingLabelText="Comparison Method"
+                        value = { this.props.comparisonMethodsSelectValue }
                     >
                         {comparisonMethodsSelectItems}
                     </SelectField>
