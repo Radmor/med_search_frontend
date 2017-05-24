@@ -18,7 +18,7 @@ export function search(state = initialState, action){
             return {
                 ...state,
                 isFetching: false,
-                list: action.searchData
+                list: action.searchResults
             };
         }
 

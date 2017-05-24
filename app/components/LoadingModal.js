@@ -16,7 +16,7 @@ class LoadingModal extends React.Component{
     render(){
         return(
             <Dialog
-                open={ window.store.getState().search.isFetching }
+                open={ false }
             >
                 <CircularProgress size={200} thickness={15} style={circularProgressStyles}/>
             </Dialog>

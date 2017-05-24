@@ -12,7 +12,7 @@ import {
 class SearchResultsTable extends React.Component{
     render(){
 
-        const tableRows = window.store.getState().search.list.map((searchResult) => {
+        const tableRows = this.props.searchResults.map((searchResult) => {
             return (
                 <TableRow striped={true}>
                     <TableRowColumn>{searchResult.id}</TableRowColumn>

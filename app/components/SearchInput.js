@@ -8,9 +8,28 @@ import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-mo
 import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
 import MenuItem from 'material-ui/MenuItem';
+import SelectField from 'material-ui/SelectField';
 
 class SearchInput extends React.Component{
     render(){
+        console.log(this.props)
+        const filteringMethodsSelectItems = this.props.filteringMethods.map(
+            (filteringMethod) => {
+                return (
+                        <MenuItem primaryText={filteringMethod} />
+                )
+            }
+        )
+
+        const comparisonMethodsSelectItems = this.props.comparisonMethods.map(
+            (comparisonMethod) => {
+                return (
+                    <MenuItem primaryText={comparisonMethod} />
+                )
+            }
+        )
+
+
         return (
             <Toolbar>
                 <ToolbarGroup firstChild={true}>
@@ -18,16 +37,16 @@ class SearchInput extends React.Component{
                 </ToolbarGroup>
                 <ToolbarGroup>
                     <ToolbarTitle text="Options" />
-                    <IconMenu
-                        iconButtonElement={
-                        <IconButton touch={true}>
-                            <NavigationExpandMoreIcon />
-                        </IconButton>
-                        }
-                    >
-                        <MenuItem primaryText="first method" />
-                        <MenuItem primaryText="second method" />
-                    </IconMenu>
+                    <SelectField
+                            floatingLabelText="Frequency"
+                        >
+                            {filteringMethodsSelectItems}
+                    </SelectField>
+                    <SelectField
+                            floatingLabelText="Frequency"
+                        >
+                            {comparisonMethodsSelectItems}
+                        </SelectField>
                     <ToolbarSeparator />
                     <RaisedButton label="Search" primary={true} />
                 </ToolbarGroup>

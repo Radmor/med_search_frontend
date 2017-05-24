@@ -5,8 +5,8 @@ import AppBar from 'material-ui/AppBar';
 import Divider from 'material-ui/Divider';
 
 import LoadingModal from './LoadingModal';
-import SearchResultsTable from './SearchResultsTable';
-import SearchInput from './SearchInput';
+import SearchResultsTableContainer from '../containers/SearchResultsTableContainer';
+import SearchInputContainer from '../containers/SearchInputContainer';
 
 class SearchUI extends React.Component{
 
@@ -18,9 +18,9 @@ class SearchUI extends React.Component{
                 >
                    
                 </AppBar>
-                <SearchInput/>
+                <SearchInputContainer/>
                 <LoadingModal/>
-                <SearchResultsTable/>
+                <SearchResultsTableContainer/>
                 
             </Paper>
         )
