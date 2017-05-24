@@ -10,13 +10,24 @@ import IconButton from 'material-ui/IconButton';
 import MenuItem from 'material-ui/MenuItem';
 import SelectField from 'material-ui/SelectField';
 
+
+
+
 class SearchInput extends React.Component{
+
+    state = {
+        queryValue: ''
+    };
+
+    updateInputValue(e){
+        this.setState({queryValue:e.target.value})
+    }
+
     render(){
-        console.log(this.props)
         const filteringMethodsSelectItems = this.props.filteringMethods.map(
             (filteringMethod) => {
                 return (
-                        <MenuItem primaryText={filteringMethod} />
+                    <MenuItem value={filteringMethod} primaryText={filteringMethod} />
                 )
             }
         )
@@ -24,33 +35,36 @@ class SearchInput extends React.Component{
         const comparisonMethodsSelectItems = this.props.comparisonMethods.map(
             (comparisonMethod) => {
                 return (
-                    <MenuItem primaryText={comparisonMethod} />
+                    <MenuItem value={comparisonMethod} primaryText={comparisonMethod} />
                 )
             }
         )
-
-
+        
+        
         return (
             <Toolbar>
                 <ToolbarGroup firstChild={true}>
-                    <TextField/>
+                    <TextField
+                        value={ this.props.query}
+                        onChange={ (e) => this.props.changeQuery(e.target.value) }
+                    />
                 </ToolbarGroup>
                 <ToolbarGroup>
                     <ToolbarTitle text="Options" />
                     <SelectField
-                        floatingLabelText="Filtering Method"
                         value = { this.props.filteringMethodsSelectValue }
+                        onChange = { this.props.changeFilteringMethodSelectValue }
                     >
                         {filteringMethodsSelectItems}
                     </SelectField>
                     <SelectField
-                        floatingLabelText="Comparison Method"
                         value = { this.props.comparisonMethodsSelectValue }
+                        onChange = { this.props.changeComparisonMethodSelectValue }
                     >
                         {comparisonMethodsSelectItems}
                     </SelectField>
                     <ToolbarSeparator />
-                    <RaisedButton label="Search" primary={true}/>
+                    <RaisedButton label="Search" primary={true} />
                 </ToolbarGroup>
             </Toolbar>
         )

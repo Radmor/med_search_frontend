@@ -8,4 +8,4 @@ export function getSearchResults(queryOptions){
         return api.getSearchResults(queryOptions)
             .then(json => dispatch(searchActions.receiveSearchResults(json)))
     }
-}
+} 
