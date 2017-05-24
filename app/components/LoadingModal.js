@@ -16,7 +16,7 @@ class LoadingModal extends React.Component{
     render(){
         return(
             <Dialog
-                open={ false }
+                open={ this.props.open }
             >
                 <CircularProgress size={200} thickness={15} style={circularProgressStyles}/>
             </Dialog>
