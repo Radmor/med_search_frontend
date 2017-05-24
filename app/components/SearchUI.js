@@ -13,15 +13,10 @@ class SearchUI extends React.Component{
     render(){
         return (
             <Paper>
-                <AppBar
-                    title="Med search frontend"
-                >
-                   
-                </AppBar>
+                <AppBar title="Med search frontend"/>   
                 <SearchInputContainer/>
                 <LoadingModalContainer/>
                 <SearchResultsTableContainer/>
-                
             </Paper>
         )
     }
