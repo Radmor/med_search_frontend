@@ -38,17 +38,17 @@ class SearchInput extends React.Component{
                 <ToolbarGroup>
                     <ToolbarTitle text="Options" />
                     <SelectField
-                            floatingLabelText="Frequency"
-                        >
-                            {filteringMethodsSelectItems}
+                        floatingLabelText="Filtering Method"
+                    >
+                        {filteringMethodsSelectItems}
                     </SelectField>
                     <SelectField
-                            floatingLabelText="Frequency"
-                        >
-                            {comparisonMethodsSelectItems}
-                        </SelectField>
+                        floatingLabelText="Comparison Method"
+                    >
+                        {comparisonMethodsSelectItems}
+                    </SelectField>
                     <ToolbarSeparator />
-                    <RaisedButton label="Search" primary={true} />
+                    <RaisedButton label="Search" primary={true}/>
                 </ToolbarGroup>
             </Toolbar>
         )
