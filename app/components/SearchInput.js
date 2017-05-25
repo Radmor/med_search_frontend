@@ -64,7 +64,7 @@ class SearchInput extends React.Component{
                         {comparisonMethodsSelectItems}
                     </SelectField>
                     <ToolbarSeparator />
-                    <RaisedButton label="Search" primary={true} />
+                    <RaisedButton label="Search" primary={true} onTouchTap= {this.props.getSearchResults }/>
                 </ToolbarGroup>
             </Toolbar>
         )

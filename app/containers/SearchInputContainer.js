@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import SearchInput from '../components/SearchInput';
 import * as searchConfigActions from '../actions/SearchConfigActions';
-
+import * as searchEffects from '../effects/SearchEffects';
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -14,8 +14,16 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(searchConfigActions.changeComparisonMethodSelectValue(value))
         },
         changeQuery: (value) => {
-            console.log(value)
             dispatch(searchConfigActions.changeQuery(value))
+        },
+
+        getSearchResults: () => {
+            var queryOptions = {
+                query: window.store.getState().searchConfig.query,
+                filtering_method: window.store.getState().searchConfig.filteringMethodsSelectValue,
+                comparison_method: window.store.getState().searchConfig.comparisonMethodsSelectValue
+            }
+            dispatch(searchEffects.getSearchResults(queryOptions))
         }
 
     }

@@ -1,6 +1,6 @@
 class api{
     constructor(){
-        this.searchURL = 'http://0.0.0.0:8000/api/search'
+        this.searchURL = 'http://0.0.0.0:8000/search/'
     }
 
     fetch(method, url, options={}){

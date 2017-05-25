@@ -15,7 +15,6 @@ class SearchResultsTable extends React.Component{
         const tableRows = this.props.searchResults.map((searchResult) => {
             return (
                 <TableRow striped={true}>
-                    <TableRowColumn>{searchResult.id}</TableRowColumn>
                     <TableRowColumn>{ searchResult.title }</TableRowColumn>
                     <TableRowColumn>{ searchResult.content }</TableRowColumn>
                 </TableRow>
@@ -25,7 +24,6 @@ class SearchResultsTable extends React.Component{
         return (
             <Table>
                 <TableHeader displaySelectAll={false}>
-                    <TableHeaderColumn>id</TableHeaderColumn>
                     <TableHeaderColumn>Title</TableHeaderColumn>
                     <TableHeaderColumn>Content</TableHeaderColumn>
                 </TableHeader>
