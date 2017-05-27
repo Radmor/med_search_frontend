@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import SearchInput from '../components/SearchInput';
 import * as searchConfigActions from '../actions/SearchConfigActions';
 import * as searchEffects from '../effects/SearchEffects';
+import * as searchConfigEffects from '../effects/SearchConfigEffects';
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -24,6 +25,10 @@ const mapDispatchToProps = (dispatch) => {
                 comparison_method: window.store.getState().searchConfig.comparisonMethodsSelectValue
             }
             dispatch(searchEffects.getSearchResults(queryOptions))
+        },
+
+        getSearchConfig: () => {
+            dispatch(searchConfigEffects.getSearchConfig())
         }
 
     }

@@ -19,6 +19,10 @@ class SearchInput extends React.Component{
         queryValue: ''
     };
 
+    componentDidMount(){
+        this.props.getSearchConfig();
+    }
+
     updateInputValue(e){
         this.setState({queryValue:e.target.value})
     }

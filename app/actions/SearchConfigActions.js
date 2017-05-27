@@ -28,3 +28,16 @@ export function changeQuery(value){
         query: value
     }
 }
+
+export function getSearchConfig(){
+    return {
+        type: SEARCHCONFIG_GET
+    }
+}
+
+export function receiveSearchConfig(searchConfig){
+    return {
+        type: SEARCHCONFIG_RECEIVE,
+        searchConfig: searchConfig
+    }
+}

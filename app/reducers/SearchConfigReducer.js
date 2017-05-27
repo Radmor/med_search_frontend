@@ -1,13 +1,16 @@
 import {SEARCHCONFIG_QUERY_UPDATE,SEARCHCONFIG_GET, SEARCHCONFIG_RECEIVE, SEARCHCONFIG_COMPARISON_METHOD_SELECT_VALUE, SEARCHCONFIG_FILTERING_METHOD_SELECT_VALUE } from '../constants/SearchConfigConstants';
 
-const initialFilteringMethods = ['metoda1', 'metoda2']
-const initialComparisonMethods = ['metoda1', 'metoda2']
+
+
+
+const initialFilteringMethods = []
+const initialComparisonMethods = []
 
 const initialState = {
     filteringMethods: initialFilteringMethods,
     comparisonMethods: initialComparisonMethods,
-    filteringMethodsSelectValue: initialFilteringMethods[0],
-    comparisonMethodsSelectValue: initialComparisonMethods[0],
+    filteringMethodsSelectValue: '',
+    comparisonMethodsSelectValue: '',
     query: ''
 }
 
@@ -22,8 +25,8 @@ export function searchConfig(state = initialState, action){
         case SEARCHCONFIG_RECEIVE:{
             return {
                 ...state,
-                filteringMethods:action.filteringMethods,
-                comparisonMethods: action.comparisonMethods
+                filteringMethods:action.searchConfig.filtering_methods,
+                comparisonMethods: action.searchConfig.comparison_methods
             };
             
         }
