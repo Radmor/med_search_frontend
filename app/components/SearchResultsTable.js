@@ -17,6 +17,7 @@ class SearchResultsTable extends React.Component{
                 <TableRow striped={true}>
                     <TableRowColumn>{ searchResult.title }</TableRowColumn>
                     <TableRowColumn>{ searchResult.content }</TableRowColumn>
+                    <TableRowColumn>{ searchResult.measure }</TableRowColumn>
                 </TableRow>
             )
             });
@@ -26,6 +27,7 @@ class SearchResultsTable extends React.Component{
                 <TableHeader displaySelectAll={false}>
                     <TableHeaderColumn>Title</TableHeaderColumn>
                     <TableHeaderColumn>Content</TableHeaderColumn>
+                    <TableHeaderColumn>Measure</TableHeaderColumn>
                 </TableHeader>
                 <TableBody displayRowCheckbox={false}>
                     { tableRows }
