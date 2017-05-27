@@ -26,7 +26,9 @@ export function searchConfig(state = initialState, action){
             return {
                 ...state,
                 filteringMethods:action.searchConfig.filtering_methods,
-                comparisonMethods: action.searchConfig.comparison_methods
+                comparisonMethods: action.searchConfig.comparison_methods,
+                filteringMethodsSelectValue: action.searchConfig.filtering_methods[0],
+                comparisonMethodsSelectValue: action.searchConfig.comparison_methods[0]
             };
             
         }
