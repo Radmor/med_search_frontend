@@ -1,2 +1,3 @@
 export const SEARCH_GET = 'SEARCH_GET';
 export const SEARCH_RECEIVE = 'SEARCH_RECEIVE';
+export const TERM_WEIGHT_UPDATE = 'TERM_WEIGHT_UPDATE';

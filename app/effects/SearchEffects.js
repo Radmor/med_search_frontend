@@ -6,11 +6,7 @@ export function getSearchResults(queryOptions){
     return dispatch => {
         dispatch(searchActions.getSearchResults())
         return api.getSearchResults({
-            body: JSON.stringify({
-                query: queryOptions.query,
-                filtering_method: queryOptions.filtering_method,
-                comparison_method: queryOptions.comparison_method
-            })
+            body: JSON.stringify(queryOptions)
         })
             .then(json => dispatch(searchActions.receiveSearchResults(json)))
     }

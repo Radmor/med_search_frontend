@@ -5,6 +5,8 @@ import * as searchConfigActions from '../actions/SearchConfigActions';
 import * as searchEffects from '../effects/SearchEffects';
 import * as searchConfigEffects from '../effects/SearchConfigEffects';
 
+import * as searchActions from '../actions/SearchActions';
+
 const mapDispatchToProps = (dispatch) => {
     return {
         
@@ -18,11 +20,16 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(searchConfigActions.changeQuery(value))
         },
 
+        changeTermWeight: (term, weight) => {
+            dispatch(searchActions.changeTermWeight(term, weight))
+        },
+
         getSearchResults: () => {
             var queryOptions = {
                 query: window.store.getState().searchConfig.query,
                 filtering_method: window.store.getState().searchConfig.filteringMethodsSelectValue,
-                comparison_method: window.store.getState().searchConfig.comparisonMethodsSelectValue
+                comparison_method: window.store.getState().searchConfig.comparisonMethodsSelectValue,
+                terms_weights: window.store.getState().search.termsWeights
             }
             dispatch(searchEffects.getSearchResults(queryOptions))
         },
@@ -40,7 +47,8 @@ const mapStateToProps = (state) => {
         comparisonMethods: state.searchConfig.comparisonMethods,
         filteringMethodsSelectValue: state.searchConfig.filteringMethodsSelectValue,
         comparisonMethodsSelectValue: state.searchConfig.comparisonMethodsSelectValue,
-        query: state.searchConfig.query
+        query: state.searchConfig.query,
+        termsWeights: state.search.termsWeights
     }
 }
 

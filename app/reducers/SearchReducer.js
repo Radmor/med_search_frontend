@@ -1,8 +1,9 @@
-import { SEARCH_GET, SEARCH_RECEIVE } from '../constants/SearchConstants';
+import { SEARCH_GET, SEARCH_RECEIVE, TERM_WEIGHT_UPDATE } from '../constants/SearchConstants';
 
 const initialState = {
     list: [],
-    isFetching: false
+    isFetching: false,
+    termsWeights: {}
 };
 
 export function search(state = initialState, action){
@@ -18,8 +19,16 @@ export function search(state = initialState, action){
             return {
                 ...state,
                 isFetching: false,
-                list: action.searchResults
+                list: action.searchResults,
+                termsWeights: action.termsWeights
             };
+        }
+        
+        case TERM_WEIGHT_UPDATE: {
+            state.termsWeights[action.term] = action.weight;
+            return {
+                ...state
+            }
         }
 
         default:

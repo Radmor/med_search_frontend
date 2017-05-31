@@ -1,4 +1,4 @@
-import {SEARCH_GET, SEARCH_RECEIVE} from '../constants/SearchConstants';
+import { SEARCH_GET, SEARCH_RECEIVE, TERM_WEIGHT_UPDATE } from '../constants/SearchConstants';
 
 export function getSearchResults(){
     return {
@@ -9,6 +9,15 @@ export function getSearchResults(){
 export function receiveSearchResults(searchResults){
     return {
         type: SEARCH_RECEIVE,
-        searchResults: searchResults
+        searchResults: searchResults.results,
+        termsWeights: searchResults.terms_weights
+    }
+}
+
+export function changeTermWeight(term, weight){
+    return {
+        type:TERM_WEIGHT_UPDATE,
+        term: term,
+        weight: weight
     }
 }
