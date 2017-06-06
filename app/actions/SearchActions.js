@@ -10,7 +10,8 @@ export function receiveSearchResults(searchResults){
     return {
         type: SEARCH_RECEIVE,
         searchResults: searchResults.results,
-        termsWeights: searchResults.terms_weights
+        termsWeights: searchResults.terms_weights,
+        measures: searchResults.measures
     }
 }
 

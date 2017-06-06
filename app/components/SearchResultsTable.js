@@ -17,7 +17,7 @@ class SearchResultsTable extends React.Component{
                 <TableRow striped={true}>
                     <TableRowColumn>{ searchResult.title }</TableRowColumn>
                     <TableRowColumn>{ searchResult.content }</TableRowColumn>
-                    <TableRowColumn>{ searchResult.measure }</TableRowColumn>
+                    <TableRowColumn>{ this.props.measures[searchResult.title] }</TableRowColumn>
                 </TableRow>
             )
             });

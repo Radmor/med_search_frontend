@@ -3,7 +3,8 @@ import { SEARCH_GET, SEARCH_RECEIVE, TERM_WEIGHT_UPDATE } from '../constants/Sea
 const initialState = {
     list: [],
     isFetching: false,
-    termsWeights: {}
+    termsWeights: {},
+    measures: {}
 };
 
 export function search(state = initialState, action){
@@ -20,7 +21,8 @@ export function search(state = initialState, action){
                 ...state,
                 isFetching: false,
                 list: action.searchResults,
-                termsWeights: action.termsWeights
+                termsWeights: action.termsWeights,
+                measures: action.measures
             };
         }
         

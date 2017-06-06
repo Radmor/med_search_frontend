@@ -5,7 +5,8 @@ import SearchResultsTable from '../components/SearchResultsTable';
 
 const mapStateToProps = (state) => {
     return {
-        searchResults: state.search.list
+        searchResults: state.search.list,
+        measures: state.search.measures
     }
 }
 
